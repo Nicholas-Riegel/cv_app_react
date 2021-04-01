@@ -1,34 +1,34 @@
 import React from 'react'
 
-export default function Output({propData}) {
+export default function Output({data}) {
     return (
         <div className='output'>
             <div className='contactOutput'>
-                <p>{propData.name}</p>
-                <p>{propData.email}</p>
-                <p>{propData.phone}</p>
+                <p>{data.name}</p>
+                <p>{data.email}</p>
+                <p>{data.phone}</p>
             </div>
             <div className='educationOutput'>
                 <h3>Education</h3>
-                {propData.education.map(x => (
-                    <>
+                {data.education.map(x => (
+                    <div key={x.id}>
                         <p>{x.school}</p>
                         <p>{x.degree}</p>
                         <p>{x.dates}</p>
-                    </>
+                    </div>
                 ))}
             </div>
             <div className='workOutput'>
                 <h3>Experience</h3>
-                {propData.work.map(x => (
-                    <>
+                {data.work.map(x => (
+                    <div key={x.id}>
                         <p>{x.employer}</p>
                         <p>{x.position}</p>
                         <p>{x.dates}</p>
                         <p>{x.details}</p>
-                    </>
+                    </div>
                 ))}
             </div>
-        </div>
+        </div>    
     )
 }
