@@ -51,7 +51,7 @@ export default function App() {
 	}
 
 	return (
-		<div className='main'>
+		<div className='container'>
 			<Input
 				data={data}
 				setData={setData}

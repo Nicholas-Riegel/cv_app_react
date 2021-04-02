@@ -11,7 +11,7 @@ export default function Input({
     return (
         <div className='input'>
             <div className='contactInput'>
-                <p>Personal Information</p>
+                <h3>Personal Information</h3>
                 <input
                     type="text"
                     placeholder='Name...'
@@ -32,9 +32,19 @@ export default function Input({
                 />
             </div>
             <div className='educationInput'>
-                <p>Education</p>
+                <h3>Education</h3>
                 {data.education.map(x => (
-                    <div key={x.id}>
+                    <div key={x.id} className='education_box'>
+                        <input
+                            type="text"
+                            placeholder='Degree...'
+                            onChange={(e) => setData({
+                                ...data, education: data.education.map(
+                                    y => y.id === x.id ? { ...y, degree: e.target.value } : y
+                                    )
+                                })}
+                            value={data.education.find(y=>y.id === x.id).degree}
+                        />
                         <input
                             type="text"
                             placeholder='School/University...'
@@ -44,16 +54,6 @@ export default function Input({
                                 )
                             })}
                             value={data.education.find(y=>y.id === x.id).school}
-                        />
-                        <input
-                            type="text"
-                            placeholder='Degree...'
-                            onChange={(e) => setData({
-                                ...data, education: data.education.map(
-                                    y => y.id === x.id ? { ...y, degree: e.target.value } : y
-                                )
-                            })}
-                            value={data.education.find(y=>y.id === x.id).degree}
                         />
                         <input
                             type="text"
@@ -72,12 +72,22 @@ export default function Input({
                         })}>Delete</button>
                     </div>
                 ))}
-                <button onClick={addEducation}>Add</button>
+                <button className='btn_add' onClick={addEducation}>Add</button>
             </div>
             <div className='experienceInput'>
-                <p>Experience</p>
+                <h3>Experience</h3>
                 {data.work.map(x => (
-                    <div key={x.id}>
+                    <div key={x.id} className='work_box'>
+                        <input
+                            type="text"
+                            placeholder='Position...'
+                            onChange={(e) => setData({
+                                ...data, work: data.work.map(
+                                    y => y.id === x.id ? { ...y, position: e.target.value } : y
+                                    )
+                                })}
+                            value={data.work.find(y=>y.id === x.id).position}
+                        />
                         <input
                             type="text"
                             placeholder='Employer...'
@@ -87,16 +97,6 @@ export default function Input({
                                 )
                             })}
                             value={data.work.find(y=>y.id === x.id).employer}
-                        />
-                        <input
-                            type="text"
-                            placeholder='Position...'
-                            onChange={(e) => setData({
-                                ...data, work: data.work.map(
-                                    y => y.id === x.id ? { ...y, position: e.target.value } : y
-                                )
-                            })}
-                            value={data.work.find(y=>y.id === x.id).position}
                         />
                         <input
                             type="text"
@@ -125,9 +125,9 @@ export default function Input({
                         })}>Delete</button>
                     </div>
                 ))}
-                <button onClick={addWork}>Add</button>
+                <button className='btn_add' onClick={addWork}>Add</button>
             </div>
-            <button onClick={clearAll}>Clear All</button>
+            <button className='btn_clear_all' onClick={clearAll}>Clear All</button>
         </div>
     )
 }
