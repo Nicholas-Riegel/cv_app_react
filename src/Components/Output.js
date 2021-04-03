@@ -11,25 +11,40 @@ export default function Output({data}) {
                         <p>{data.phone}</p>
                     </div>
                     <div className='educationOutput'>
-                        <h3>Education</h3>
-                        <hr/>
+                        { data.education.length > 0 ? (<><h3>Education</h3>
+                        <hr/></>) : null}
                         {data.education.map(x => (
                             <div key={x.id}>
-                                <p>{x.degree}, {x.school}, {x.dates}</p>
+                                <p>
+                                    {x.degree}
+                                    {x.degree ? (', ') : null}
+                                    {x.school}
+                                    {x.school ? (', ') : null}
+                                    {x.dates}</p>
                             </div>
                         ))}
                     </div>
                     <div className='workOutput'>
-                        <h3>Experience</h3>
-                        <hr/>
-                        {data.work.map(x => (
-                            <div key={x.id}>
-                                <p>{x.position}, {x.employer}, {x.dates}</p>
-                                <ul>
-                                    <li>{x.details}</li>
-                                </ul>
-                            </div>
-                        ))}
+                        {data.work.length > 0 ? (
+                            <>
+                                <h3>Experience</h3>
+                                <hr />
+                            
+                                {data.work.map(x => (
+                                    <div key={x.id}>
+                                        <p>
+                                            {x.position}
+                                            {x.employer ? (', ') : null}
+                                            {x.employer}{x.dates ? (', ') : null}
+                                            {x.dates}</p>
+                                        <ul style={ x.details==='' ? {listStyleType: 'none'}: null}>
+                                            <li>{x.details}</li>
+                                        </ul>
+                                    </div>
+                                ))}
+
+                            </>
+                        ) : null}
                     </div>
                 </div>
             </div>
