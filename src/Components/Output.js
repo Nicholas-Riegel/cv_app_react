@@ -17,9 +17,9 @@ export default function Output({data}) {
                             <div key={x.id}>
                                 <p>
                                     {x.degree}
-                                    {x.degree ? (', ') : null}
-                                    {x.school}
                                     {x.school ? (', ') : null}
+                                    {x.school}
+                                    {x.dates ? (', ') : null}
                                     {x.dates}</p>
                             </div>
                         ))}
