@@ -1,26 +1,29 @@
 body{
     box-sizing: border-box;
+    background-color: #90d5ec;
+    background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
 }
 .container{
     display: flex;
 }
 .input{
     width: 20%;
-    border: green solid 1px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
 }
 .education_box{
-    border: grey solid 1px;
     margin-top: 20px;
     border-radius: 5px;
-    
 }
 
 .output{
     display: flex;
     justify-content: center;
     width: 80%;
-    /* border: red solid 1px; */
 }
 .output_page {
     width: 85%;
@@ -49,17 +52,54 @@ body{
     text-align: center;
 }
 .work_box{
-    border: solid gray 1px;
     margin-top: 20px;
     border-radius: 5px;
 }
 button{
     width: 100%;
+    padding: 5px;
+    cursor: pointer;
 }
 input{
     width: 100%;
     box-sizing: border-box;
+    padding: 5px;
 }
 .btn_add, .btn_clear_all {
     margin-top: 20px;
+}
+.btn_clear_all{
+    width: 95%;
+}
+.experienceInput, .educationInput, .contactInput{
+    border: gray solid 1px;
+    border-radius: 5px;
+    background-color: #a3b4c8;
+}
+.experienceInput, .educationInput{
+    margin-top: 20px;
+}
+.contactInput{
+    display: flex;
+    justify-content: center;
+}
+.contactInput > div {
+    width: 95%;
+    margin-bottom: 10px;
+}
+.educationInput > div {
+    width: 95%;
+    margin-bottom: 10px;
+}
+.educationInput{
+    display: flex;
+    justify-content: center;
+}
+.experienceInput > div {
+width: 95%;
+    margin-bottom: 10px;
+}
+.experienceInput{
+    display: flex;
+    justify-content: center;
 }

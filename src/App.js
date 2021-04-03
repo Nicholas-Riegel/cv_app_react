@@ -5,6 +5,7 @@ import Output from './Components/Output'
 import './App.css';
 
 export default function App() {
+	
 	const [data, setData] = useState({
 		name: '',
 		email: '',
