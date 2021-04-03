@@ -17,7 +17,28 @@ export default function App() {
 	useEffect(() => {
 		const temp = localStorage.getItem('data')
 		const lsData = JSON.parse(temp)
-		if(lsData) setData(lsData)
+		if (lsData) {
+			setData(lsData)
+		} else {
+			setData({
+				name: 'First Name Last Name',
+				email: 'email@email.org',
+				phone: '(123) 456-7890',
+				education: [{
+					id: Date.now(),
+					degree: 'BA',
+					school: 'University College',
+					dates: '2020',
+				}],
+				work: [{
+					id: Date.now(),
+					position: 'Employee',
+					employer: 'Acme Corp.',
+					dates: '2020-2021',
+					details: 'Implemented implementations',
+				}],
+			})
+		}
 	}, [])
 
 	useEffect(() => {
