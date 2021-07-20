@@ -1,5 +1,16 @@
-This is my first React App. 
-I do not focus on styling. 
-It demonstrates the ability to edit in real time from the input fields to the output documents. 
-Uses .map, .filter, .find methods, as well as the spread and ternary operators. 
-Uses React Hooks instead of class components, as they are cleaner and more readable. 
+# Resume Generator using React
+
+App generates formatted Resume based on real time inputs.
+
+View at: https://nicholas-riegel.github.io/cv_app_react/
+
+Technologies:
+
+1. React (Hooks)
+
+Methods:
+
+1. .map 
+2. .filter 
+3. .find 
+4. spread and ternary operators. 

@@ -20,7 +20,8 @@ export default function Output({data}) {
                                     {x.school ? (', ') : null}
                                     {x.school}
                                     {x.dates ? (', ') : null}
-                                    {x.dates}</p>
+                                    {x.dates}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -36,7 +37,8 @@ export default function Output({data}) {
                                             {x.position}
                                             {x.employer ? (', ') : null}
                                             {x.employer}{x.dates ? (', ') : null}
-                                            {x.dates}</p>
+                                            {x.dates}
+                                        </p>
                                         <ul style={ x.details==='' ? {listStyleType: 'none'}: null}>
                                             <li>{x.details}</li>
                                         </ul>
